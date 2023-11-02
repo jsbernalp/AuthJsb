@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AuthJsb</string>
+    <string name="com_auth0_domain">dev-5guwpnsx87vezupt.us.auth0.com</string>
+    <string name="com_auth0_clientId">ZCVzktckQP6KzeDho1UKbwLCDPWusxcZ</string>
 </resources>
