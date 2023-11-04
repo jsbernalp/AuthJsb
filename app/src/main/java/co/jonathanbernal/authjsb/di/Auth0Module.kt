@@ -20,5 +20,5 @@ class Auth0Module {
 
     @Provides
     @ClientIDAuth0
-    fun clientIDAuth0(@ApplicationContext context: Context) = context.getString(R.string.com_auth0_clientId)
+    fun clientIDAuth0(@ApplicationContext context: Context) = context.getString(R.string.com_auth0_client_id)
 }

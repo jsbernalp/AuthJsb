@@ -11,7 +11,7 @@ plugins {
 
 android {
     namespace = "co.jonathanbernal.libauth"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 24
@@ -40,6 +40,8 @@ android {
 
 dependencies {
 
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
+
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
@@ -65,14 +67,16 @@ dependencies {
     implementation("com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.2.0")
 
     //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
 
     //Lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-common-java8:2.5.1")
 
-    implementation("androidx.multidex:multidex:2.0.1")
     implementation("com.auth0.android:auth0:2.9.2")
     implementation("com.auth0.android:lock:3.2.2")
+
 }

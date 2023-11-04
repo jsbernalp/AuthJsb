@@ -35,13 +35,13 @@ class AuthManager @Inject constructor(
     ) {
         val callback = object : AuthenticationCallback() {
             override fun onError(error: AuthenticationException) {
-                onError(error.getDescription())
+                onError.invoke(error.getDescription())
             }
 
             override fun onAuthentication(credentials: Credentials) {
                 val token = credentials.idToken
                 auth0Manager.saveCredentials(credentials)
-                onSuccess(token)
+                onSuccess.invoke(token)
             }
 
         }
