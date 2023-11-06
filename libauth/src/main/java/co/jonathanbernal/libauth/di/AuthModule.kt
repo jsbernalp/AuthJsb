@@ -20,7 +20,7 @@ class AuthModule {
     @Provides
     @Singleton
     fun getAuth0(@DomainAuth0 domainAuth0: String, @ClientIDAuth0 clientIdAuth0: String): Auth0 =
-        Auth0(domainAuth0, clientIdAuth0)
+        Auth0(clientIdAuth0, domainAuth0)
 
     @Provides
     @Singleton

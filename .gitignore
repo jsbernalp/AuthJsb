@@ -14,13 +14,4 @@
 .cxx
 local.properties
 .idea/vcs.xml
-.idea/sonarlint/issuestore/index.pb
-.idea/sonarlint/issuestore/2/6/267706b032e9ebb83b711e285afc50de1073d6cf
-.idea/sonarlint/issuestore/4/e/4e25e6bcac4f268392564ed4766e5d498be227b6
-.idea/sonarlint/issuestore/d/2/d2a4383452aad84a18429a5844d31330a012a9e6
-.idea/sonarlint/issuestore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d
-.idea/sonarlint/securityhotspotstore/index.pb
-.idea/sonarlint/securityhotspotstore/2/6/267706b032e9ebb83b711e285afc50de1073d6cf
-.idea/sonarlint/securityhotspotstore/4/e/4e25e6bcac4f268392564ed4766e5d498be227b6
-.idea/sonarlint/securityhotspotstore/d/2/d2a4383452aad84a18429a5844d31330a012a9e6
-.idea/sonarlint/securityhotspotstore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d
+.idea/sonarlint
