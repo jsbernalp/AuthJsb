@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="auth0_scheme">app</string>
+    <string name="auth0_scope">openid profile email offline_access</string>
+</resources>

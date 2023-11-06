@@ -3,9 +3,10 @@ import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id ("kotlin-kapt")
-    id ("dagger.hilt.android.plugin")
-    id ("kotlin-parcelize")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -39,7 +40,9 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
+
+    implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -48,28 +51,32 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //UI
-    implementation ("com.github.bumptech.glide:glide:4.12.0")
-    implementation ("com.google.zxing:core:3.3.3")
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    implementation("com.google.zxing:core:3.3.3")
 
     // Zxing
-    implementation ("com.journeyapps:zxing-android-embedded:3.6.0@aar")
+    implementation("com.journeyapps:zxing-android-embedded:3.6.0@aar")
 
     //Hilt
-    implementation ("com.google.dagger:hilt-android:2.38.1")
-    kapt ("com.google.dagger:hilt-android-compiler:2.38.1")
-    kapt ("androidx.hilt:hilt-compiler:1.0.0")
+    implementation("com.google.dagger:hilt-android:2.48")
+    ksp("com.google.dagger:hilt-compiler:2.48")
+    kapt("androidx.hilt:hilt-compiler:1.1.0")
 
     //Rx
-    implementation ("com.jakewharton.rxbinding2:rxbinding:2.2.0")
-    implementation ("com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.2.0")
+    implementation("com.jakewharton.rxbinding2:rxbinding:2.2.0")
+    implementation("com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.2.0")
 
     //Retrofit
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
 
     //Lifecycle
-    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-    implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation ("androidx.lifecycle:lifecycle-common-java8:2.5.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.5.1")
 
-    implementation ("androidx.multidex:multidex:2.0.1")
+    implementation("com.auth0.android:auth0:2.9.2")
+    implementation("com.auth0.android:lock:3.2.2")
+
 }
