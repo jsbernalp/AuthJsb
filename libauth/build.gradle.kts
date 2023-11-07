@@ -47,7 +47,7 @@ afterEvaluate {
             create<MavenPublication>("maven") {
                 groupId = "co.jonathanbernal.libauth"
                 artifactId = "libauth"
-                version = "1.0.14"
+                version = "1.0"
             }
         }
     }
