@@ -54,7 +54,7 @@ android {
 
 dependencies {
 
-    implementation(project(":libauth"))
+    implementation(project(path = ":libauth"))
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
