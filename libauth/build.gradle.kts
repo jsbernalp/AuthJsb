@@ -48,6 +48,7 @@ afterEvaluate {
                 groupId = "co.jonathanbernal.authjsb"
                 artifactId = "libauth"
                 version = "1.0.15"
+                artifact("$buildDir/outputs/aar/libauth.aar")
             }
         }
     }
