@@ -45,10 +45,9 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("maven") {
-                groupId = "co.jonathanbernal.authjsb"
-                artifactId = "libauth"
-                version = "1.0.15"
-                artifact("$buildDir/outputs/aar/libauth.aar")
+                groupId = this.groupId
+                artifactId = this.artifactId
+                version = this.version
             }
         }
     }
