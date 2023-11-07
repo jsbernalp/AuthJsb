@@ -45,9 +45,9 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("maven") {
-                groupId = this.groupId
-                artifactId = this.artifactId
-                version = this.version
+                afterEvaluate {
+                    from(components.findByName("release"))
+                }
             }
         }
     }
