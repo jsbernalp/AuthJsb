@@ -1,3 +1,4 @@
+import org.apache.commons.logging.LogFactory.release
 import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
 
 plugins {
@@ -37,6 +38,18 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                groupId = "co.jonathanbernal.libauth"
+                artifactId = "libauth"
+                version = "1.0"
+            }
+        }
     }
 }
 
