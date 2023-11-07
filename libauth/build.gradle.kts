@@ -18,6 +18,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -79,4 +80,5 @@ dependencies {
     implementation("com.auth0.android:auth0:2.9.2")
     implementation("com.auth0.android:lock:3.2.2")
 
+    implementation("androidx.multidex:multidex:2.0.1")
 }
