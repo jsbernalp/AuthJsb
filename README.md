@@ -169,8 +169,12 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 ## Resultado
-En el ejemplo anterior el login de Lock.Auth0 se abre dando clic en un botón y se muestra de la siguiente manera
-![image](https://github.com/jsbernalp/AuthJsb/assets/43454364/c2bac428-d5d0-4204-aece-195360de810a)
+En el ejemplo anterior el login de Lock.Auth0 se abre dando clic en un botón y se muestra de la siguiente manera.
+
+![]() <img src="https://github.com/jsbernalp/AuthJsb/assets/43454364/c2bac428-d5d0-4204-aece-195360de810a" width="150">
+
+
+
 
 
 
