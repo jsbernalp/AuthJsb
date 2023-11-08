@@ -41,7 +41,7 @@ Luego en los recursos string de tu proyecto.
 > Debes reemplazar los valores con los datos de tu proyecto en Auth0.
 
 ## Inicializar instancias de Auth0
-**Authjsb** inicializa automaticamente todas las instancias necesarias para usar Auth0, sin embargo es necesario conocer el **domain** y el **clientId** de cada proyecto, para eso se debe crear una clase con las siguientes lineas de codigo:
+**Authjsb** inicializa automáticamente todas las instancias necesarias para usar Auth0, sin embargo es necesario conocer el **domain** y el **clientId** de cada proyecto, para eso se debe crear una clase con las siguientes líneas de código:
 ```
 import android.content.Context
 import co.jonathanbernal.libauth.di.ClientIDAuth0
@@ -75,13 +75,36 @@ class Auth0Module {
     fun clientIDAuth0(@ApplicationContext context: Context) = context.getString(R.string.com_auth0_client_id)
 }
 ```
-> [!IMPORTANT]
-> Para la inyeccion de dependencias la **Authjsb** usar Dagger Hilt, por lo que es importante que tu proyecto tambien use esta libreria.
 
-las dependencias de Dagger Hilt son las siguientes:
+## Configuración Dagger Hilt
+> [!IMPORTANT]
+> Para la inyección de dependencias **Authjsb** usa Dagger Hilt, por lo que es importante que tu proyecto también use esta librería.
+
+En primera instancia, en el **build.gradle.kts(Project)**, se debe añadir lo siguiente:
 ```
+plugins {
+    id("com.android.application") version "8.1.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.0" apply false
+    id("com.google.devtools.ksp") version "1.9.10-1.0.13" apply false
+    id("com.google.dagger.hilt.android") version "2.48" apply false
+    id("com.android.library") version "8.1.2" apply false
+}
+```
+
+Luego en **build.gradle.kts(Module: app)** las dependencias de Dagger Hilt son las siguientes:
+```
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
+    id("kotlin-parcelize")
+}
+
 implementation("com.google.dagger:hilt-android:2.48")
 ksp("com.google.dagger:hilt-compiler:2.48")
 kapt("androidx.hilt:hilt-compiler:1.1.0")
 ```
+
 
