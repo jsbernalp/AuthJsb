@@ -108,7 +108,7 @@ kapt("androidx.hilt:hilt-compiler:1.1.0")
 ```
 
 ## Configuración en el manifest
-En este caso, usamos Lock una libreria de Auth0 que permite heredar el login de forma nativa, para esto es necesario agregar un activity en el manifest, de la siguiente manera: 
+En este caso, usamos Lock una librería de Auth0 que permite heredar el login de forma nativa, para esto es necesario agregar un activity en el manifest, de la siguiente manera:
 ```
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -126,7 +126,7 @@ En este caso, usamos Lock una libreria de Auth0 que permite heredar el login de 
     </application>
 </manifest>
 ```
-adicionalmente en los recursos (themes.xml) anadir los siguiente:
+Adicionalmente en los recursos (themes.xml) añadir lo siguiente:
 ```
 <style name="LockTheme" parent="Lock.Theme">
         <item name="Auth0.HeaderLogo">@mipmap/ic_launcher_round</item>
@@ -138,5 +138,5 @@ adicionalmente en los recursos (themes.xml) anadir los siguiente:
     </style>
 ```
 > [!NOTE]
-> Puedes personalizar los colores para que esten acordes con los de tu proyecto
+> Puedes personalizar los colores para que estén acordes con los de tu proyecto
 
