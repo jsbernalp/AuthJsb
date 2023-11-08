@@ -129,14 +129,48 @@ En este caso, usamos Lock una librería de Auth0 que permite heredar el login de
 Adicionalmente en los recursos (themes.xml) añadir lo siguiente:
 ```
 <style name="LockTheme" parent="Lock.Theme">
-        <item name="Auth0.HeaderLogo">@mipmap/ic_launcher_round</item>
-        <item name="Auth0.HeaderTitle">@string/app_name</item>
-        <item name="Auth0.HeaderTitleColor">@color/black</item>
-        <item name="Auth0.HeaderBackground">@color/white</item>
-        <item name="Auth0.PrimaryColor">@color/black</item>
-        <item name="Auth0.DarkPrimaryColor">@color/white</item>
-    </style>
+   <item name="Auth0.HeaderLogo">@mipmap/ic_launcher_round</item>
+   <item name="Auth0.HeaderTitle">@string/app_name</item>
+   <item name="Auth0.HeaderTitleColor">@color/black</item>
+   <item name="Auth0.HeaderBackground">@color/white</item>
+   <item name="Auth0.PrimaryColor">@color/black</item>
+   <item name="Auth0.DarkPrimaryColor">@color/white</item>
+</style>
 ```
 > [!NOTE]
 > Puedes personalizar los colores para que estén acordes con los de tu proyecto
+
+## Llamar el login y capturar el token
+En tu activity se debe inyectar la clase de Auth0Manager como se muestra a continuación:
+```
+...
+import co.jonathanbernal.libauth.manager.AuthManager
+
+@AndroidEntryPoint
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
+    @Inject
+    lateinit var authManager: AuthManager
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.button.setOnClickListener {
+            authManager.login(this@MainActivity, { tokenJwt ->
+                Log.e(this::class.simpleName, "token : $tokenJwt")
+            }, { error ->
+                Log.e(this::class.simpleName, "error : $error")
+            })
+        }
+    }
+}
+```
+## Resultado
+En el ejemplo anterior el login de Lock.Auth0 se abre dando clic en un botón y se muestra de la siguiente manera
+![image](https://github.com/jsbernalp/AuthJsb/assets/43454364/c2bac428-d5d0-4204-aece-195360de810a)
+
+
 
