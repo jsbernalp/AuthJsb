@@ -107,4 +107,36 @@ ksp("com.google.dagger:hilt-compiler:2.48")
 kapt("androidx.hilt:hilt-compiler:1.1.0")
 ```
 
+## Configuración en el manifest
+En este caso, usamos Lock una libreria de Auth0 que permite heredar el login de forma nativa, para esto es necesario agregar un activity en el manifest, de la siguiente manera: 
+```
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+       ...
+      <activity android:name="com.auth0.android.lock.LockActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/LockTheme"
+            tools:replace="android:theme"/>
+    </application>
+</manifest>
+```
+adicionalmente en los recursos (themes.xml) anadir los siguiente:
+```
+<style name="LockTheme" parent="Lock.Theme">
+        <item name="Auth0.HeaderLogo">@mipmap/ic_launcher_round</item>
+        <item name="Auth0.HeaderTitle">@string/app_name</item>
+        <item name="Auth0.HeaderTitleColor">@color/black</item>
+        <item name="Auth0.HeaderBackground">@color/white</item>
+        <item name="Auth0.PrimaryColor">@color/black</item>
+        <item name="Auth0.DarkPrimaryColor">@color/white</item>
+    </style>
+```
+> [!NOTE]
+> Puedes personalizar los colores para que esten acordes con los de tu proyecto
 
